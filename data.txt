@@ -1,0 +1,3 @@
+Performing File operation using PHP
+ We are learning file functions in PHP
+ We are learning file functions in PHP
