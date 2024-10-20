@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('connect.php');
+include('connect.php');
 
 function login($email, $password)
 {
@@ -24,6 +24,8 @@ if (isset($_POST['btnsubmit'])) {
 
 <head>
     <title>Login program</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -33,25 +35,26 @@ if (isset($_POST['btnsubmit'])) {
         <a href="index.php">Registration</a>
         <h2>Login</h2>
         <p style="color:red;"><?php if (isset($error))
-            echo $error; ?></p>
+                                    echo $error; ?></p>
         <form method="post">
             <table>
                 <tr>
                     <td>Enter Email:</td>
-                    <td><input type="text" name="txtemail" /></td>
+                    <td><input class="form-control" type="text" name="txtemail" /></td>
                 </tr>
                 <tr>
                     <td>Enter Password:</td>
-                    <td><input type="password" name="txtpassword" /></td>
+                    <td><input class="form-control" type="password" name="txtpassword" /></td>
                 </tr>
-
                 <tr>
                     <td></td>
-                    <td><input type="submit" name="btnsubmit" value="Submit" /></td>
+                    <td><input class="btn btn-primary" type="submit" name="btnsubmit" value="Submit" /></td>
                 </tr>
             </table>
         </form>
     </center>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

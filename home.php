@@ -18,12 +18,17 @@ if (isset($_GET['deleteid'])) {
 <html>
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
     <center>
-        Welcome <?php echo $_SESSION['useremail']; ?> | <a href="logout.php">Logout</a><br />
-        <a href="addcar.php">Add New Car</a><br />
+        Welcome <?php echo $_SESSION['useremail']; ?> |
+        <a href="logout.php" class="btn btn-danger">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a><br />
+        <a href="addcar.php" class="btn btn-success">Add New Car</a><br />
         <?php
         if (isset($_GET['msg']))
             echo "Success: Record saved successfully";
@@ -33,16 +38,16 @@ if (isset($_GET['deleteid'])) {
         <br />
         <h2>-- Car Details --</h2>
         <table border="1">
-            <tr>
-                <th>No.</th>
-                <th>Car name</th>
-                <th>Car Company</th>
-                <th>Car Detail</th>
-                <th>Car Price</th>
-                <th>Car Launch Year</th>
-                <th>Image</th>
-                <th>Edit</th>
-                <th>Delete</th>
+            <tr class="table-primary table-success">
+                <th class="text-center table-primary fw-bold">No.</th>
+                <th class="text-center table-primary fw-bold">Car name</th>
+                <th class="text-center table-primary fw-bold">Car Company</th>
+                <th class="text-center table-primary fw-bold">Car Detail</th>
+                <th class="text-center table-primary fw-bold">Car Price</th>
+                <th class="text-center table-primary fw-bold">Car Launch Year</th>
+                <th class="text-center table-primary fw-bold">Image</th>
+                <th class="text-center table-primary fw-bold">Edit</th>
+                <th class="text-center table-primary fw-bold">Delete</th>
             </tr>
             <?php
             $i = 1;
@@ -58,9 +63,13 @@ if (isset($_GET['deleteid'])) {
                     <td><?php echo $data[4]; ?></td>
                     <td><?php echo $data[5]; ?></td>
                     <td><img src="<?php echo $data[6]; ?>" width="100" height="100" /></td>
-                    <td><a href="addcar.php?carid=<?php echo $data[0]; ?>">Edit</a></td>
-                    <td><a href="home.php?deleteid=<?php echo $data[0]; ?>"
-                            onclick="return confirm('Are you sure to delete?')">Delete</a></td>
+                    <td>
+                        <a class="btn btn-primary me-2" href="addcar.php?carid=<?php echo $data[0]; ?>">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="home.php?deleteid=<?php echo $data[0]; ?>"
+                            onclick="return confirm('Are you sure to delete?')">Delete</a>
+                    </td>
                 </tr>
             <?php
                 $i++;
@@ -68,6 +77,9 @@ if (isset($_GET['deleteid'])) {
             ?>
         </table>
     </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

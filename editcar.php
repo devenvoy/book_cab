@@ -1,5 +1,5 @@
 <?php
-include ("connect.php");
+include("connect.php");
 session_start();
 if (!isset($_SESSION['useremail'])) {
     header('location:login.php');
@@ -29,6 +29,8 @@ if (isset($_POST['btnsubmit'])) {
 
 <head>
     <title>Car Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -40,35 +42,39 @@ if (isset($_POST['btnsubmit'])) {
             <table>
                 <tr>
                     <td>Enter Car Name:</td>
-                    <td><input type="text" name="txtcarname" value="<?php echo $data['car_name']; ?>" /></td>
+                    <td><input class="form-control" type="text" name="txtcarname" value="<?php echo $data['car_name']; ?>" /></td>
                 </tr>
                 <tr>
                     <td>Enter Car Company Name:</td>
-                    <td><input type="text" name="txtcarcompany" value="<?php echo $data['car_company']; ?>" /></td>
+                    <td><input class="form-control" type="text" name="txtcarcompany" value="<?php echo $data['car_company']; ?>" /></td>
                 </tr>
 
                 <tr>
                     <td>Enter Detail:</td>
-                    <td><textarea cols="25" rows="3" name="txtdetail"><?php echo $data['car_detail']; ?></textarea></td>
+                    <td><textarea class="form-control" cols="25" rows="3" name="txtdetail"><?php echo $data['car_detail']; ?></textarea></td>
                 </tr>
 
                 <tr>
                     <td>Enter Price:</td>
-                    <td><input type="text" name="txtprice" value="<?php echo $data['car_price']; ?>" /></td>
+                    <td><input class="form-control" type="text" name="txtprice" value="<?php echo $data['car_price']; ?>" /></td>
                 </tr>
 
                 <tr>
                     <td>Enter Launch Year:</td>
-                    <td><input type="text" name="txtyear" value="<?php echo $data['launch_year']; ?>" /></td>
+                    <td><input class="form-control" type="text" name="txtyear" value="<?php echo $data['launch_year']; ?>" /></td>
                 </tr>
 
                 <tr>
                     <td></td>
-                    <td><input type="submit" name="btnsubmit" value="Submit" /></td>
+                    <td><input class="btn btn-success" type="submit" name="btnsubmit" value="Submit" /></td>
                 </tr>
             </table>
         </form>
     </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
