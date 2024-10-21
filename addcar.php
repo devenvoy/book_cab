@@ -105,7 +105,8 @@ if (isset($_POST['btnsubmit'])) {
                         if (isset($_GET['carid'])) {
                         ?>
                             <br />
-                            <input type="hidden" name="oldimagename" value="<?php echo $data['car_image']; ?>" />
+                            <input type="hidden" name="oldimagename"
+                                value="<?php echo $data['car_image']; ?>" />
                             <img src="<?php echo $data['car_image']; ?>" width="100" height="100" />
                         <?php
                         }

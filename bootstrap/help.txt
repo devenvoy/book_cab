@@ -16,6 +16,19 @@
 
 11. red button - 'btn btn-danger'  [ logout , delete etc ]
 
+// error msg
+ <p><?php if (isset($error)) echo "
+        <div class='alert alert-danger' role='alert'>
+  {$error}
+</div>
+        "; ?></p>
+        
+        // success msg
+        <p><?php if (isset($msg)) echo "
+        <div class='alert alert-success' role='alert'>
+  $msg
+</div>
+        "; ?></p>
 
 
  add js -  before ending body tag
